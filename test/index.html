@@ -1,0 +1,25 @@
+<!doctype html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Facts Demo</title>
+  <script type="text/javascript" src="../src/js/facts.js"></script>
+  <link rel="stylesheet" type="text/css" href="../src/css/facts.css"></link>
+</head>
+
+<body>
+  <button onClick="test();">Test</button>
+  <br>
+  <br>
+  <div id="subj-results"></div>
+  <br>
+  <div id="obj-results"></div>
+  
+  <script type="text/javascript">
+    function test() {
+      Facts.Search.search("sample.json", document.getElementById("subj-results"), document.getElementById("obj-results"));
+    }
+  </script>
+</body>
+<html>
