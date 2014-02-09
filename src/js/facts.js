@@ -35,28 +35,28 @@ Facts.Util = {
 Facts.Search = {
   renderResults: function(div, result, types, forceBgColor, containerClass) {
     var type = types[0];
-    var results = result[type].results;
+    var values = result[type].values;
   
-    if (!results.length)
+    if (!values.length)
       return;
-  
+
     var containerDiv = document.createElement("div");
     containerDiv.setAttribute("class", "fact-result-container " + containerClass  + "-" + type);
     div.appendChild(containerDiv);
   
-    for (i in results) {
+    for (var i in values) {
       var childDiv = document.createElement("div");
       childDiv.setAttribute("class", "fact-node fact-result");
-  
-      if ((i != 0) || forceBgColor)
+
+      if ((i >= 1) || forceBgColor)
         childDiv.setAttribute("style", "background-color: " + Facts.Util.nextColor());
   
-      childDiv.textContent = results[i].label + " (" + (Math.floor(Math.random() * 1000) % 10) + ")";
+      childDiv.textContent = values[i].label + " (" + (Math.floor(Math.random() * 1000) % 10) + ")";
   
       containerDiv.appendChild(childDiv);
   
-      if (types.length > 1)
-        Facts.Search.renderResults(childDiv, results[i], types.slice(1), false, containerClass);
+      if ((types.length > 1) && (values[i].children))
+        Facts.Search.renderResults(childDiv, values[i].children, types.slice(1), false, containerClass);
     }
   },
   
