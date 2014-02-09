@@ -42,6 +42,7 @@ Facts.Search = {
   
 		var containerDiv = document.createElement("div");
 		containerDiv.setAttribute("class", "fact-result-container " + containerClass  + "-" + type);
+
 		var hasChildren = false;
 
 		for (var i in values) {
@@ -56,9 +57,13 @@ Facts.Search = {
 
 			if ((i >= 1) || forceBgColor)
 				childDiv.setAttribute("style", "background-color: " + Facts.Util.nextColor());
+
+			var labelDiv = document.createElement("div");
+			labelDiv.setAttribute("class", containerClass + "-label");
   
-			childDiv.textContent = value.label + " (" + (Math.floor(Math.random() * 1000) % 10) + ")";
+			labelDiv.textContent = value.label + " (" + (Math.floor(Math.random() * 1000) % 10) + ")";
   
+			childDiv.appendChild(labelDiv);
 			containerDiv.appendChild(childDiv);
   
 			if ((types.length > 1) && (value.children))
@@ -74,11 +79,11 @@ Facts.Search = {
 							function(data) {
 								subjDiv.innerHTML = "";
 								Facts.Util.resetColor();        
-								Facts.Search.renderResults(subjDiv, data, ["subj", "pred", "obj"], true, "fact-right-container");
+								Facts.Search.renderResults(subjDiv, data, ["subj", "pred", "obj"], true, "fact-right");
   
 								objDiv.innerHTML = "";
 								Facts.Util.resetColor();        
-								Facts.Search.renderResults(objDiv, data, ["obj", "pred", "subj"], true, "fact-left-container");
+								Facts.Search.renderResults(objDiv, data, ["obj", "pred", "subj"], true, "fact-left");
 							},
 							function(xhr) { console.error(xhr); }
 							);

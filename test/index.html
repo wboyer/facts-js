@@ -9,16 +9,41 @@
 </head>
 
 <body>
-  <button onClick="test();">Test</button>
+  <div class="fact-search-container">
+    <div class="fact-search-subj">
+      <input id="pfx-subj" type="text" onkeyup="search('subj');" /><button onClick="search('subj');">Search</button>
+    </div>
+    <div class="fact-search-obj">
+      <input id="pfx-obj" type="text" onkeyup="search('obj');" /><button onClick="search('obj');">Search</button>
+    </div>
+  </div>
   <br>
   <br>
-  <div id="subj-results"></div>
+  <div id="top-results"></div>
   <br>
-  <div id="obj-results"></div>
+  <div id="bottom-results"></div>
   
   <script type="text/javascript">
-    function test() {
-      Facts.Search.search('sample.js', document.getElementById("subj-results"), document.getElementById("obj-results"));
+    function search(node) {
+
+      var i = document.getElementById('pfx-' + node);
+      q = i.value;
+      if (q === '')
+        return;
+
+      var t = document.getElementById('top-results');
+      var b = document.getElementById('bottom-results');
+
+      if (node === 'subj') {
+        document.getElementById('pfx-obj').classList.remove('active');
+        Facts.Search.search('/api/facts/browse/subj?q=' + q, t, b);
+      }
+      else {
+        document.getElementById('pfx-subj').classList.remove('active');
+        Facts.Search.search('/api/facts/browse/obj?q=' + q, b, t);
+      }
+
+      i.classList.add('active');
     }
   </script>
 </body>

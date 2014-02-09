@@ -1,15 +1,27 @@
 @charset "UTF-8";
 
+.fact-search-container { width: 900px; }
+.fact-search-subj { float: left }
+.fact-search-obj { float: right }
+
+input { background-color: lightgray }
+input.active { background-color: white }
+
 .fact-result { border-style: solid; border-color: black; border-width: 0px; background-color: transparent; overflow: auto; font-family: Arial, Helvetica, sans-serif; }
 
 .fact-result-container { border-style: solid; border-color: black; border-width: 0px; }
 
 .fact-node { border-top-width: 1px; }
 
-.fact-right-container-subj { width: 600px; border-left-width: 1px; border-right-width: 1px; border-bottom-width: 1px; }
-.fact-right-container-pred { float: right; width: 400px; border-left-width: 1px; margin-top: -1px }
-.fact-right-container-obj { float: right; width: 200px; border-left-width: 1px; margin-top: -1px }
+.fact-right-subj { width: 900px; border-left-width: 1px; border-right-width: 1px; border-bottom-width: 1px; }
+.fact-right-pred { float: right; width: 600px; border-left-width: 1px; margin-top: -1px; }
+.fact-right-obj { float: right; width: 300px; border-left-width: 1px; margin-top: -1px; }
 
-.fact-left-container-obj { width: 600px; border-left-width: 1px; border-right-width: 1px; border-bottom-width: 1px; }
-.fact-left-container-pred { float: left; width: 400px; border-right-width: 1px; margin-top: -1px; }
-.fact-left-container-subj { float: left; width: 200px; border-right-width: 1px; margin-top: -1px; }
+.fact-right-label { width: 300px; float: left; margin-right: -2px; padding: 2px; box-sizing: border-box }
+
+.fact-left-obj { width: 900px; border-left-width: 1px; border-right-width: 1px; border-bottom-width: 1px; }
+.fact-left-pred { float: left; width: 600px; border-right-width: 1px; margin-top: -1px; }
+.fact-left-subj { float: left; width: 300px; border-right-width: 1px; margin-top: -1px; }
+
+.fact-left-label { width: 300px; float: right; margin-left: -2px; padding: 2px; box-sizing: border-box; }
+
