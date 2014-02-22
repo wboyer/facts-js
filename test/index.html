@@ -25,6 +25,7 @@
     </div>
     <div class="row">
     <div class="col-xs-12">
+        <br>
         <div id="top-results"></div>
         <br>
         <div id="bottom-results"></div>
@@ -46,11 +47,11 @@
 
       if (node === 'subj') {
         document.getElementById('pfx-obj').classList.remove('active');
-        Facts.Search.search('/api/facts/browse/subj?q=' + q, t, b);
+        Facts.Search.search('/api/facts/browse/subj?q=' + q, t, b, 'Subjects matching: "' + q + '"', "Those Subjects as Objects");
       }
       else {
         document.getElementById('pfx-subj').classList.remove('active');
-        Facts.Search.search('/api/facts/browse/obj?q=' + q, b, t);
+        Facts.Search.search('/api/facts/browse/obj?q=' + q, b, t, "Those Objects as Subjects", 'Objects matching: "' + q + '"');
       }
 
       i.classList.add('active');

@@ -6,42 +6,55 @@ body {
 }
 
 .fact-search-subj {
-	margin: 5px;
+	margin: 8px;
 }
 
 .fact-search-obj {
-	margin: 5px;
+	margin: 8px;
 }
 
 @media(min-width:768px){
 	.fact-search-subj {
-		float: left
+		float: left;
 	}
 
 	.fact-search-obj {
-		float: right
+		float: right;
 	}
 }
 
 input {
 	width: 100px;
 	font-size: 18px;
-	background-color: lightgray
+	background-color: lightgray;
 }
 
 input.active {
-	background-color: white
+	background-color: white;
 }
 
 .input-label {
-	width: 40px;
+	width: 35px;
 	float: left;
+	font-weight: bold;
 }
 
 .fact-result-container {
 	border-style: solid;
 	border-width: 1px 0 0 0;
 	margin: -1px -1px -1px -1px;
+}
+
+.fact-result-heading {
+	border-style: solid;
+	border-width: 0px 1px 1px 1px;
+	background-color: whitesmoke;
+	font-weight: bold;
+	padding: 3px;
+}
+
+.fact-result-heading-right {
+	text-align: right;
 }
 
 .fact-node {
@@ -57,12 +70,12 @@ input.active {
 
 .fact-right-pred {
 	float: right;
-	width: 66%;
+	width: 75%;
 }
 
 .fact-right-obj {
 	float: right;
-	width: 66%;
+	width: 50%;
 }
 
 .fact-left-obj {
@@ -71,12 +84,12 @@ input.active {
 
 .fact-left-pred {
 	float: left;
-	width: 66%;
+	width: 75%;
 }
 
 .fact-left-subj {
 	float: left;
-	width: 66%;
+	width: 50%;
 }
 
 .fact-label {
@@ -88,22 +101,22 @@ input.active {
 
 .fact-right-subj-label {
 	margin-right: -2px;
-	width: 34%;
+	width: 25%;
 }
 
 .fact-right-pred-label {
 	margin-right: -2px;
-	width: 34%;
+	width: 50%;
 }
 
 .fact-left-obj-label {
 	margin-left: -2px;
-	width: 34%;
+	width: 25%;
 	float: right;
 }
 
 .fact-left-pred-label {
 	margin-left: -2px;
-	width: 34%;
+	width: 50%;
 	float: right;
 }

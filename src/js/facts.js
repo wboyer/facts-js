@@ -32,7 +32,7 @@ Facts.Util = {
 };
 
 Facts.Search = {
-	renderResults: function(div, result, types, forceBgColor, containerClass) {
+	renderResults: function(div, result, types, forceBgColor, containerClass, heading, headingClass) {
 		var type = types[0];
 		if (!result[type])
 			return;
@@ -41,6 +41,13 @@ Facts.Search = {
 
 		var containerDiv = document.createElement("div");
 		containerDiv.setAttribute("class", "fact-result-container " + containerClass + "-" + type);
+
+		if (heading) {
+			var headingDiv = document.createElement("div");
+			headingDiv.setAttribute("class", headingClass);
+			headingDiv.textContent = heading;
+			containerDiv.appendChild(headingDiv);
+		}
 
 		var hasChildren = false;
 
@@ -73,16 +80,16 @@ Facts.Search = {
 			div.appendChild(containerDiv);
 	},
 
-	search: function(url, subjDiv, objDiv) {
+	search: function(url, subjDiv, objDiv, subjHeading, objHeading) {
 		Facts.Util.loadJSON(url,
 			function(data) {
 				subjDiv.innerHTML = "";
 				Facts.Util.resetColor();
-				Facts.Search.renderResults(subjDiv, data, ["subj", "pred", "obj"], true, "fact-right");
+				Facts.Search.renderResults(subjDiv, data, ["subj", "pred", "obj"], true, "fact-right", subjHeading, "fact-result-heading");
 
 				objDiv.innerHTML = "";
 				Facts.Util.resetColor();
-				Facts.Search.renderResults(objDiv, data, ["obj", "pred", "subj"], true, "fact-left");
+				Facts.Search.renderResults(objDiv, data, ["obj", "pred", "subj"], true, "fact-left", objHeading, "fact-result-heading fact-result-heading-right");
 			},
 			function(xhr) {
 				console.error(xhr);
@@ -90,3 +97,4 @@ Facts.Search = {
 		);
 	}
 };
+
