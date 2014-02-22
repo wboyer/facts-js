@@ -53,15 +53,15 @@ Facts.Search = {
 				hasChildren = true;
 
 			var childDiv = document.createElement("div");
-			childDiv.setAttribute("class", "fact-node fact-result");
+			childDiv.setAttribute("class", "fact-node");
 
 			if ((i >= 1) || forceBgColor)
 				childDiv.setAttribute("style", "background-color: " + Facts.Util.nextColor());
 
 			var labelDiv = document.createElement("div");
-			labelDiv.setAttribute("class", containerClass + "-label");
+			labelDiv.setAttribute("class", "fact-label " + containerClass  + "-" + type + "-label");
   
-			labelDiv.textContent = value.label + " (" + (Math.floor(Math.random() * 1000) % 10) + ")";
+			labelDiv.textContent = value.label;
   
 			childDiv.appendChild(labelDiv);
 			containerDiv.appendChild(childDiv);

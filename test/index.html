@@ -4,25 +4,35 @@
 <head>
   <meta charset="UTF-8">
   <title>Facts Demo</title>
-  <script type="text/javascript" src="../src/js/facts.js"></script>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../src/css/facts.css"></link>
 </head>
 
 <body>
-  <div class="fact-search-container">
-    <div class="fact-search-subj">
-      <input id="pfx-subj" type="text" onkeyup="search('subj');" /><button onClick="search('subj');">Search</button>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <div class="fact-search-subj">
+          <div class="input-label">Subj:</div><input id="pfx-subj" type="text" onkeyup="search('subj');" onfocus="search('subj');" />
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+        <div class="fact-search-obj">
+          <div class="input-label">Obj:</div><input id="pfx-obj" type="text" onkeyup="search('obj');" onfocus="search('obj'); "/>
+        </div>
+      </div>
     </div>
-    <div class="fact-search-obj">
-      <input id="pfx-obj" type="text" onkeyup="search('obj');" /><button onClick="search('obj');">Search</button>
+    <div class="row">
+    <div class="col-xs-12">
+        <div id="top-results"></div>
+        <br>
+        <div id="bottom-results"></div>
+      </div>
     </div>
   </div>
-  <br>
-  <br>
-  <div id="top-results"></div>
-  <br>
-  <div id="bottom-results"></div>
   
+  <script type="text/javascript" src="../src/js/facts.js"></script>
   <script type="text/javascript">
     function search(node) {
 
@@ -46,5 +56,8 @@
       i.classList.add('active');
     }
   </script>
+
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
 </body>
 <html>
