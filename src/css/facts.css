@@ -75,7 +75,7 @@ input.active {
 
 .fact-right-obj {
 	float: right;
-	width: 50%;
+	width: 65%;
 }
 
 .fact-left-obj {
@@ -89,7 +89,7 @@ input.active {
 
 .fact-left-subj {
 	float: left;
-	width: 50%;
+	width: 65%;
 }
 
 .fact-label {
@@ -106,7 +106,7 @@ input.active {
 
 .fact-right-pred-label {
 	margin-right: -2px;
-	width: 50%;
+	width: 35%;
 }
 
 .fact-left-obj-label {
@@ -117,6 +117,6 @@ input.active {
 
 .fact-left-pred-label {
 	margin-left: -2px;
-	width: 50%;
+	width: 35%;
 	float: right;
 }
