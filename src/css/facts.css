@@ -27,6 +27,7 @@ input {
 	width: 100px;
 	font-size: 18px;
 	background-color: lightgray;
+	color: black;
 }
 
 input.active {
@@ -49,6 +50,7 @@ input.active {
 	border-style: solid;
 	border-width: 0px 1px 1px 1px;
 	background-color: whitesmoke;
+	color: black;
 	font-weight: bold;
 	padding: 3px;
 }
@@ -61,6 +63,7 @@ input.active {
 	border-style: solid;
 	border-width: 0px 1px 1px 1px;
 	background-color: transparent;
+	color: black;
 	overflow: hidden;
 }
 
