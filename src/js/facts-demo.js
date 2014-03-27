@@ -14,12 +14,12 @@ Facts.Demo = {
 				<div class="row"> \
 					<div class="col-xs-12 col-sm-4">   \
 						<div class="fact-search-subj"> \
-							<div class="fact-input-label">Subj:</div><input class="fact-input" id="fact-pfx-subj" type="text" onkeyup="Facts.Demo.search(\'subj\');" onfocus="Facts.Demo.search(\'subj\');" /> \
+							<div class="fact-input-label">Subj:</div><input class="fact-input" id="fact-pfx-subj" type="text" onkeyup="Facts.Demo.search(\'subj\');" onfocus="Facts.Demo.search(\'subj\');" placeholder="type something" /> \
 						</div> \
 					</div> \
 					<div class="col-xs-12 col-sm-4 col-sm-offset-4"> \
 						<div class="fact-search-obj"> \
-							<div class="fact-input-label">Obj:</div><input class="fact-input" id="fact-pfx-obj" type="text" onkeyup="Facts.Demo.search(\'obj\');" onfocus="Facts.Demo.search(\'obj\'); "/> \
+							<div class="fact-input-label">Obj:</div><input class="fact-input" id="fact-pfx-obj" type="text" onkeyup="Facts.Demo.search(\'obj\');" onfocus="Facts.Demo.search(\'obj\');" placeholder="type something"/> \
 						</div> \
 					</div> \
 				</div> \
