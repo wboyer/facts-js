@@ -6,59 +6,27 @@
   <title>Facts Demo</title>
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../src/css/facts.css"></link>
+
+  <style>
+    body {
+	  font-size: 12px;
+	  font-family: Arial, Helvetica, sans-serif;
+    }
+  </style>
 </head>
 
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <div class="fact-search-subj">
-          <div class="input-label">Subj:</div><input id="pfx-subj" type="text" onkeyup="search('subj');" onfocus="search('subj');" />
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-        <div class="fact-search-obj">
-          <div class="input-label">Obj:</div><input id="pfx-obj" type="text" onkeyup="search('obj');" onfocus="search('obj'); "/>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-    <div class="col-xs-12">
-        <br>
-        <div id="top-results"></div>
-        <br>
-        <div id="bottom-results"></div>
-      </div>
-    </div>
+  <div id="demo" class="container">
   </div>
   
-  <script type="text/javascript" src="../src/js/facts.js"></script>
-  <script type="text/javascript">
-    function search(node) {
-
-      var i = document.getElementById('pfx-' + node);
-      q = i.value;
-      if (q === '')
-        return;
-
-      var t = document.getElementById('top-results');
-      var b = document.getElementById('bottom-results');
-
-      if (node === 'subj') {
-        document.getElementById('pfx-obj').classList.remove('active');
-        Facts.Search.search('/api/facts/browse/subj?q=' + q, t, b, 'Subjects matching: "' + q + '"', "Those Subjects as Objects");
-      }
-      else {
-        document.getElementById('pfx-subj').classList.remove('active');
-        Facts.Search.search('/api/facts/browse/obj?q=' + q, b, t, "Those Objects as Subjects", 'Objects matching: "' + q + '"');
-      }
-
-      i.classList.add('active');
-    }
-  </script>
-
   <script src="http://code.jquery.com/jquery.js"></script>
   <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="../src/js/facts.js"></script>
+  <script type="text/javascript" src="../src/js/facts-demo.js"></script>
+  <script>
+    Facts.Demo.init("#demo");
+  </script>
 </body>
 <html>
+
