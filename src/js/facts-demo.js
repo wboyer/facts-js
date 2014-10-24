@@ -35,7 +35,7 @@ Facts.Demo = {
 
 	search: function(node) {
 		var i = document.getElementById('fact-pfx-' + node);
-		q = i.value;
+		var q = i.value.toLowerCase();
 		if (q === '')
 		return;
 
