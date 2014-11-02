@@ -6,9 +6,9 @@ Facts.Demo = {
 	init: function(div) {
         jQuery(document).ready(function() {
             if (document.createStyleSheet)
-                document.createStyleSheet('/css/facts.css');
+                document.createStyleSheet('/dist/facts-js/dist/css/facts.css');
             else
-                $("head").append($("<link rel='stylesheet' href='/css/facts.css' type='text/css' media='screen' />"));
+                $("head").append($("<link rel='stylesheet' href='/dist/facts-js/dist/css/facts.css' type='text/css' media='screen' />"));
 
 			jQuery(div).html(' \
 				<div class="row"> \
